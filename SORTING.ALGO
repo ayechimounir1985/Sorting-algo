@@ -1,0 +1,23 @@
+ALGORITHM sorting_insertion
+VAR
+    tab : ARRAY_OF INTEGER[n];
+    i,j,k;l : INTEGER;
+BEGIN
+    write("type the length of tab")
+    read(n)
+    FOR l FROM 0 TO n-1 STEP   DO
+        read(tab[l])
+    END_FOR
+    j:= 2 ;
+    WHILE (j<= tab.length) DO
+        i:= j-1;
+        k:= tab[j];
+        WHILE (i>0 AND tab[i]>k) DO
+            tab[i+1] := tab[i];
+            i:= i-1;
+        END_WHILE
+        tab[i+1] := k;
+        j:= j+1 ;
+    END_WHILE
+
+END
